@@ -150,8 +150,8 @@
         $('input').validateCreditCard(function (result) {
             $('.log').html("Card type: " + (result.card_type == null ? "-" : "<i style='color: #b942f4'>" + result.card_type.name + "</i>")
                 + "; Valid: " + (result.valid == false ? "<i style='color: firebrick'>" : "<i style='color: #237bd3'>") + result.valid + "</i>"
-                + "; Length valid: " + (result.valid == false ? "<i style='color: firebrick'>" : "<i style='color: #237bd3'>") + result.length_valid + "</i>"
-                + "; Luhn valid: " + (result.valid == false ? "<i style='color: firebrick'>" : "<i style='color: #237bd3'>") + result.luhn_valid) + "</i>";
+                + "; Length valid: " + (result.length_valid == false ? "<i style='color: firebrick'>" : "<i style='color: #237bd3'>") + result.length_valid + "</i>"
+                + "; Luhn valid: " + (result.luhn_valid == false ? "<i style='color: firebrick'>" : "<i style='color: #237bd3'>") + result.luhn_valid) + "</i>";
         });
     });
 </script>
