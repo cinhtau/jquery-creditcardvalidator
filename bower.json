@@ -16,7 +16,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git://github.com/PawelDecowski/jquery-creditcardvalidator.git"
+        "url": "git://github.com/cinhtau/jquery-creditcardvalidator.git"
     },
     "ignore": [
         "tests/*",
