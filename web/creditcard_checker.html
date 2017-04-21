@@ -12,6 +12,7 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script type="text/javascript" src="js/validator.js"></script>
     <script type="text/javascript" src="js/demo.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Architects+Daughter" rel="stylesheet">
 </head>
 
 <body id="top">
@@ -95,9 +96,29 @@
         </form>
     </div>
 
+    <div id="more-test-data" class="numbers">
+        <p>More mapping stuff</p>
+        <ul class="list">
+            <!-- Paypal Test Objects https://www.paypalobjects.com/en_US/vhelp/paypalmanager_help/credit_card_numbers.htm -->
+            <li>3782 8224 6310 005 - American Express</li>
+            <li>3714 4963 5398 431 - American Express</li>
+            <li>3787 3449 3671 000 - American Express Corporate</li>
+            <li>5610 5910 8101 8250 - Australian BankCard</li>
+            <li>3056 9309 0259 04 - Diners Club</li>
+            <li>3852 0000 0232 37 - Diners Club</li>
+            <li>6011 1111 1111 1117 - Discover</li>
+            <li>6011 0009 9013 9424 - Discover</li>
+            <li>3530 1113 3330 0000 - JCB</li>
+            <li>3566 0020 2036 0505 - JCB</li>
+            <li>5555 5555 5555 4444 - MasterCard</li>
+            <li>5105 1051 0510 5100 - MasterCard</li>
+            <li>4111 1111 1111 1111 - Visa</li>
+            <li>4012 8888 8888 1881 - Visa</li>
+            <li>4222 2222 2222 2 - Visa</li>
+        </ul>
+    </div>
     <div id="supported-cards">
         <h3>Supported cards</h3>
-
         <p>Below is a list of supported card types and their string descriptors (which can be accessed via <code
                 class=" language-javascript">result<span class="token punctuation">.</span>card_type<span
                 class="token punctuation">.</span>name</code>).
@@ -127,10 +148,10 @@
 <script>
     $(function () {
         $('input').validateCreditCard(function (result) {
-            $('.log').html('Card type: ' + (result.card_type == null ? '-' : result.card_type.name)
-                + '; Valid: ' + result.valid
-                + '; Length valid: ' + result.length_valid
-                + '; Luhn valid: ' + result.luhn_valid);
+            $('.log').html("Card type: " + (result.card_type == null ? "-" : "<i style='color: #b942f4'>" + result.card_type.name + "</i>")
+                + "; Valid: " + (result.valid == false ? "<i style='color: firebrick'>" : "<i style='color: #237bd3'>") + result.valid + "</i>"
+                + "; Length valid: " + (result.valid == false ? "<i style='color: firebrick'>" : "<i style='color: #237bd3'>") + result.length_valid + "</i>"
+                + "; Luhn valid: " + (result.valid == false ? "<i style='color: firebrick'>" : "<i style='color: #237bd3'>") + result.luhn_valid) + "</i>";
         });
     });
 </script>
